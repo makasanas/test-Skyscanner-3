@@ -1,0 +1,20 @@
+.footer {
+    color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+    background: #858585;
+    hr {
+      border: 0;
+      height: 1px;
+      background: #000;
+      max-width: 90%;
+      margin: 0px auto;
+    }
+  
+    .footer-content {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+  

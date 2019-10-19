@@ -1,0 +1,323 @@
+// screen sizes
+@import "../../../../../../styles";
+
+.comment-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 10;
+
+  .comment-modal {
+    background-color: white;
+    width: 1000px;
+    height: 95vh;
+    padding: 10px 30px 20px;
+    border-radius: 10px;
+    transform: translate(-50%, -50%);
+    position: fixed;
+    left: 50%;
+    top: 50%;
+
+    @include screen-md {
+      width: 700px;
+    }
+    @include screen-sm {
+      width: 420px;
+      padding: 10px;
+    }
+    @include screen-xs {
+      width: 300px;
+      height: 550px;
+    }
+
+    .modal-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-right: 30px;
+
+      @include screen-sm {
+        padding-right: 20px;
+      }
+      @include screen-xs {
+        padding-right: 0px;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .left-pane {
+        display: flex;
+        align-items: center;
+
+        .avatar {
+          img {
+            width: 60px;
+            height: 60px;
+            object-fit: contain;
+
+            @include screen-md {
+              width: 50px;
+              height: 50px;
+            }
+          }
+        }
+        .info {
+          margin-left: 20px;
+
+          @include screen-xs {
+            margin-left: 10px;
+          }
+
+          h2 {
+            margin: 0;
+            font-size: 20px;
+            
+            color: #9acd32;
+
+            @include screen-md {
+              font-size: 17px;
+            }
+            @include screen-xs {
+              font-size: 14px;
+            }
+          }
+          .feedback {
+            display: flex;
+            align-items: center;
+            margin-top: 10px;
+
+            @include screen-md {
+              margin-top: 5px;
+            }
+
+            &-commented,
+            &-liked {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              margin-right: 10px;
+
+              img {
+                width: 15px;
+                height: 15px;
+                object-fit: contain;
+              }
+              span {
+                margin-left: 5px;
+                color: #808080;
+                
+                font-size: 13px;
+
+                @include screen-md {
+                  font-size: 12px;
+                }
+              }
+            }
+            .like {
+              border: 1px solid #808080;
+              border-radius: 4px;
+              color: #808080;
+              cursor: pointer;
+
+              &:hover {
+                background-color: #eee;
+              }
+            }
+          }
+        }
+      }
+      .right-pane {
+        @include screen-xs {
+          margin-left: 57px;
+        }
+
+        .date {
+          color: #07c;
+          font-size: 14px;
+
+          @include screen-md {
+            font-size: 13px;
+          }
+          @include screen-xs {
+            font-size: 12px;
+          }
+        }
+      }
+      .close {
+        position: absolute;
+        right: 20px;
+        top: 15px;
+
+        @include screen-sm {
+          right: 4px;
+          top: 8px;
+        }
+
+        button {
+          border: none;
+          background-color: transparent;
+          font-size: 20px;
+          color: #808080;
+          cursor: pointer;
+        }
+      }
+    }
+    .modal-content {
+      .forum-text {
+        border-bottom: 1px solid #ddd;
+
+        @include screen-xs {
+          max-height: 100px;
+          overflow: auto;
+        }
+
+        p {
+          padding-right: 20px;
+          text-align: justify;
+          font-size: 15px;
+          color: #333;
+
+          @include screen-md {
+            font-size: 13px;
+          }
+          @include screen-sm {
+            font-size: 12px;
+          }
+        }
+      }
+      .comments-pane {
+        .write-comment {
+          margin-top: 20px;
+          display: flex;
+          justify-content: space-between;
+          align-items: flex-end;
+
+          @include screen-sm {
+            margin-top: 15px;
+          }
+          @include screen-xs {
+            margin-top: 4px;
+          }
+
+          textarea {
+            width: 830px;
+            height: 100px;
+            padding: 15px;
+            font-size: 13px;
+            border-radius: 5px;
+            border-color: #808080;
+            margin: 0px;
+            resize: none;
+
+            @include screen-md {
+              width: 550px;
+              height: 80px;
+              font-size: 12px;
+            }
+            @include screen-sm {
+              width: 320px;
+              height: 70px;
+              padding: 5px;
+            }
+            @include screen-xs {
+              width: 200px;
+              height: 50px;
+              padding: 3px;
+              font-size: 11px;
+            }
+          }
+          button {
+            font-size: 15px;
+            padding: 10px 20px;
+            border: none;
+            color: white;
+            background: #00b0cc;
+            border-radius: 10px;
+            cursor: pointer;
+
+            @include screen-md {
+              padding: 8px 15px;
+              font-size: 13px;
+            }
+            @include screen-sm {
+              margin-right: 10px;
+              padding: 8px 15px;
+              font-size: 12px;
+            }
+            @include screen-xs {
+              margin-right: 10px;
+              padding: 8px 15px;
+              font-size: 10px;
+            }
+
+            &:hover {
+              background: darken(#00b0cc, 5%);
+            }
+            &:disabled {
+              background: #ddd;
+            }
+          }
+          .error {
+            border: 1px solid #f44336 !important;
+          }
+        }
+        .comments {
+          max-height: 450px;
+          margin-top: 15px;
+          overflow: auto;
+
+          @include screen-md {
+            max-height: 400px;
+          }
+          @include screen-sm {
+            max-height: 350px;
+          }
+          @include screen-xs {
+            margin-top: 5px;
+            max-height: 260px;
+          }
+
+          &::-webkit-scrollbar {
+            width: 5px;
+          }
+          &::-webkit-scrollbar-track {
+            background: #f1f1f1;
+          }
+          &::-webkit-scrollbar-thumb {
+            background: #888;
+          }
+          &::-webkit-scrollbar-thumb:hover {
+            background: #555;
+          }
+        }
+        .pagination-wrapper {
+          text-align: center;
+
+          .pagination {
+            list-style: none;
+            display: inline-block;
+
+            @include screen-sm {
+              padding: 0;
+            }
+
+            li {
+              display: inline-block;
+              padding: 2px 7px;
+              font-size: 12px;
+              color: #808080;
+              cursor: pointer;
+
+              &.active {
+                border: 1px solid #808080;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

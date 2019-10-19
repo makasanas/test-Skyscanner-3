@@ -1,0 +1,14 @@
+export const LectureHeaderImg = require('./LectureHeaderImg.webp');
+export const TopbackpackersbannerImg = require('./TopbackpackersbannerImg.webp');
+export const categoriesIcon = require('./categoriesIcon.webp');
+export const cheapIcon = require('./cheapIcon.webp');
+export const confusedIcon = require('./confusedIcon.webp');
+export const learnIcon = require('./learnIcon.webp');
+export const lecture_card = require('./lecture_card.webp');
+export const logo = require('./logo.webp');
+export const peopleImg = require('./peopleImg.webp');
+export const peopleimgeTwo = require('./peopleimgeTwo.webp');
+export const playicon = require('./playicon.webp');
+export const ratingIcon = require('./ratingIcon.webp');
+export const shoppincartIcon = require('./shoppincartIcon.webp');
+export const timeframeIcon = require('./timeframeIcon.webp');

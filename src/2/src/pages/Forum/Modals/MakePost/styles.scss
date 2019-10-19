@@ -1,0 +1,134 @@
+// screen sizes
+@import "../../../../../../styles";
+
+.post-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 10;
+
+  .post-modal {
+    width: 700px;
+    border-radius: 10px;
+    padding: 20px;
+    background-color: white;
+    transform: translate(-50%, -50%);
+    position: fixed;
+    left: 50%;
+    top: 50%;
+
+    @include screen-md {
+      width: 550px;
+    }
+    @include screen-sm {
+      width: 420px;
+    }
+    @include screen-xs {
+      width: 300px;
+      padding: 10px;
+    }
+
+    .modal-header {
+      h2 {
+        margin: 0;
+        
+        font-size: 20px;
+        color: #9acd32;
+
+        @include screen-md {
+          font-size: 17px;
+        }
+      }
+      button {
+        position: absolute;
+        right: 7px;
+        top: 7px;
+        border: none;
+        background-color: transparent;
+        font-size: 20px;
+        color: #808080;
+      }
+    }
+    .modal-content {
+      margin-top: 20px;
+
+      @include screen-md {
+        margin-top: 16px;
+      }
+
+      > div {
+        margin-bottom: 15px;
+      }
+
+      .category {
+        display: flex;
+        flex-direction: column;
+
+        select {
+          width: 200px;
+          height: 30px;
+          margin-top: 5px;
+          font-size: 13px;
+          color: #333;
+          border: 1px solid #ccc;
+
+          option[value=''] {
+            display: none;
+          }
+        }
+      }
+      .title {
+        input {
+          width: 500px;
+          height: 35px;
+          border-radius: 5px;
+          border: 1px solid #ccc;
+          padding: 5px 10px;
+          background-color: white;
+          font-size: 13px;
+          color: #333;
+
+          @include screen-sm {
+            width: 100%;
+          }
+        }
+      }
+      .message {
+        textarea {
+          resize: none;
+          width: 600px;
+          height: 200px;
+          padding: 7px 10px;
+          font-size: 13px;
+          border-radius: 5px;
+          border: 1px solid #ccc;
+          color: #333;
+
+          @include screen-md {
+            width: 100%;
+          }
+        }
+      }
+      .error {
+        border: 1px solid #f44336 !important;
+      }
+    }
+    .modal-footer {
+      display: flex;
+      justify-content: flex-end;
+
+      button {
+        margin-right: 20px;
+        padding: 10px 20px;
+        font-size: 13px;
+        border-radius: 5px;
+        background-color: #00b0cc;
+        color: white;
+        cursor: pointer;
+      }
+    }
+  }
+}

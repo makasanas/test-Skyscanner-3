@@ -1,0 +1,86 @@
+.search-card-wrapper {
+
+    .search-card-container {
+        border-top: 1px solid #dedfe0;
+        padding: 0 4px 16px;
+        user-select: none;
+        position: relative;
+        font-size: 20px;
+        background-color: transparent;
+        font-weight: 400;
+        text-decoration: none;
+        color: #fff;
+        
+        .list-view-card {
+            border: none;
+            margin: 0;
+            padding-top: 16px;
+            align-items: flex-start;
+            display: flex;
+            position: relative;
+            padding: 8px 0;
+            transition: all 0.4s ease-in-out;
+
+            &:hover {
+                transform: scale(1.01)
+            }
+
+            .list-view-image-container {
+                height: auto;
+                width: 600px;
+                object-fit: contain;
+                margin-bottom: 16px;
+
+                img {
+                    height: 100%;
+                    width: 100%;
+                }
+            }
+
+            .list-view-content {
+                position: relative;
+                padding: 0 16px;
+                min-width: 1px;
+
+                .list-view-content-title {
+                    max-width: 350px;
+                    margin-bottom: 10px;
+                    font-weight: bold;
+                }
+
+                .list-view-content-description {
+                    display: block;
+                    margin-top: 10px;
+                    margin-bottom: 20px;
+                    font-size: 16px;
+                    line-height: 1.5;
+                }
+
+                .list-view-price-rating{
+                    .list-view-price-container {
+                        margin-bottom: 20px;
+
+                        span {
+                            font-weight: 700;
+                            font-size: 18px;
+                            line-height: inherit;
+                        }
+                    }
+                    .list-view-rating-container {
+                        display: flex;
+                        align-items: center;
+                        img {
+                            height: 20px;
+                            padding-right: 10px;
+                        }
+
+                        span {
+                            font-size: 15px;
+                        }
+                    }
+                }
+            }
+        };
+
+    }
+}

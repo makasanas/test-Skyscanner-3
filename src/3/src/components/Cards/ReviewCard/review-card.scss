@@ -1,0 +1,37 @@
+.review-card {
+  background-color: rgba(0,0,0,.7);
+  height: 4em;
+  width: 6em;
+  border-radius: 6px;
+  color: #fff;
+  transition: 0.4s ease-in-out;
+
+  &:hover {
+    transform: scale(1.2);
+    z-index: 2;
+  }
+
+  .review-card-content {
+    padding: 20px;
+    display: flex;
+    align-items: center;
+
+    img {
+      height: 80px;
+      width: 80px;
+    }
+
+    span {
+      font-size: 0.5em;
+      margin-left: 20px;
+    }
+  }
+
+  .review-card-description {
+    p {
+      font-size: 18px;
+      padding: 10px;
+      line-height: 20px;
+    }
+  }
+}

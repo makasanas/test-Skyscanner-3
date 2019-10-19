@@ -1,0 +1,40 @@
+.input {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  
+  .input-field {
+    padding: 5px;
+    font-size: 13px;
+    line-height: 1.287;
+    outline: none;
+    border: none;
+    border-radius: 3px;
+    width: 100%;
+  }
+
+  .search-field{
+    border: solid 1px #CCC;
+    border-radius: 5px;
+    height: 100%;
+    outline: none;
+    line-height: normal;
+    font-size: 20px;
+    width: 100%;
+    padding: 5px 10px;
+    background-color: rgba(255, 255, 255, 0.7);
+    transition: 0.4s;
+    position: absolute;
+    box-sizing: content-box;
+  }
+
+  >.search-icon {
+    position: absolute;
+    font-size: 2rem;
+    color: #393939;
+    top: 30%;
+    right: 0;
+    z-index: 1;
+    transition: 0.4s;
+  }
+}

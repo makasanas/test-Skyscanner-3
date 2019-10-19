@@ -1,0 +1,94 @@
+.wrapper {
+    .container{
+        max-width: 80%;
+        margin: auto;
+        height: 100%;
+        position: static;
+        transform: none;
+        top: unset;
+        left: unset;
+    }
+    .cart-container {
+        padding-top: 150px;
+        color: #fff;
+        padding-bottom: 300px;
+
+        .items-container {
+            list-style: none;
+        }
+
+        .total-container {
+            padding: 20px 0 20px 0;
+            border-bottom: 1px solid #F6AB68;
+            display: flex;
+            align-items: center;
+
+            .total-title {
+                font-size: 18px;
+            }
+            
+            .total-price {
+                font-size: 30px;
+                font-weight: bold;
+                margin-left: auto;
+            }
+        }
+
+        .promo-container {
+            padding: 20px 20px 20px 20px;
+
+            .promo-title {
+                display: inline-block;
+            }
+
+            .promo-input {
+                display: inline-block;
+                margin-left: 30px;
+                width: 400px;
+            }
+        }
+
+        .purchase-container {
+            .buttons-container {
+                margin-left: auto;
+                width: 300px;
+                height: 50px;
+                display: flex;
+                justify-content: space-between;
+
+                div {
+                    width: 120px;
+                    height: 50px;
+                }
+
+                .cart-button {
+                    border: 1px solid transparent;
+                    display: block;
+                    width: 100%;
+                    height: 100%;
+                    font-size: 15px;
+                    line-height: 1.35135;
+                    margin-bottom: 0;
+                    font-weight: 600;
+                    text-align: center;
+                    touch-action: manipulation;
+                    cursor: pointer;
+                    background-image: none;
+                    white-space: nowrap;
+                    text-align: center;
+                    outline: none;
+
+                    span {
+                        margin: auto;
+                        text-align: center;
+                    }
+                }
+
+                button[type="submit"] {
+                    background: #000;
+                    color: #fff;
+                }
+            }
+        }
+    }
+}

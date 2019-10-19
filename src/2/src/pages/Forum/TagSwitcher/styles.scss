@@ -1,0 +1,45 @@
+@import "../../../../../styles";
+
+.tag-switcher__wrapper {
+  background-color: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(18px);
+  padding: 15px 32px;
+  border-radius: 10px;
+
+  @include screen-lg {
+    padding: 9px 6px;
+    border-radius: 9px;
+  }
+  @include screen-md {
+    margin-top: 0;
+  }
+
+  button {
+    width: 125px;
+    height: 50px;
+    background-color: transparent;
+    border: 2px solid #707070;
+    border-radius: 20px;
+    color: #707070;
+    
+    font-weight: bold;
+    font-size: 20px;
+    margin: 0 7px;
+    cursor: pointer;
+
+    &:hover,
+    &.active {
+      color: white;
+      border-color: white;
+    }
+
+    @include screen-lg {
+      width: 80px;
+      height: 50px;
+      font-size: 15px;
+    }
+    @include screen-md {
+      height: 40px;
+    }
+  }
+}

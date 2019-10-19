@@ -1,0 +1,409 @@
+@import "../../../../styles";
+$asset-path: '../../../../assets/images';
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.dropdown {
+  left: -1vw !important;
+}
+
+.loginPage {
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.4) image($asset-path, "header.png");
+  background-size: cover;
+  background-blend-mode: darken;
+}
+
+.login {
+  margin: 1.67em 0 1em 0 !important;
+}
+
+.signinHeader {
+  /* margin: 1em 0 !important; */
+  margin-top: 3rem;
+}
+
+#signinDiv {
+  position: absolute;
+  /* left: 50% */
+  /* display: none; */
+  margin: 11% 0 0 0;
+}
+
+.container {
+  position: absolute;
+  width: auto;
+  height: auto;
+  top: calc(50%);
+  left: calc(50%);
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  /* position: relative; */
+}
+
+.form-lr {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border-radius: 6px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  background-color: rgba(0, 0, 0, 0.4);
+  /* background-color: #0E1628; */
+  margin: 1rem;
+  width: 40rem;
+  /* height: 30rem; */
+  color: white;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding-bottom: 1.5rem;
+}
+
+input,
+button {
+  outline: none !important;
+}
+
+.form-lr h1 {
+  font-size: 4rem;
+}
+
+.form-lr h2 {
+  font-weight: normal;
+}
+
+.form-lr h2 span {
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.form-lr p {
+  -ms-flex-item-align: start;
+  align-self: flex-start;
+  margin-left: 10%;
+}
+
+.form-lr p span {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.form-lr input {
+  background-color: transparent;
+  color: white;
+  width: 80%;
+  border: none;
+  border-bottom: 1px solid white;
+  font-size: 1.5rem;
+  text-align: left;
+  margin-bottom: 1rem;
+  line-height: 3rem;
+}
+
+.form-btn {
+  border: none;
+  color: white;
+  background: black;
+  padding: 1rem 6rem;
+  margin: 1.5rem auto;
+  font-size: 1.5rem;
+  cursor: pointer;
+  -webkit-animation: shake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+  animation: shake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+  -webkit-animation-duration: 0.8s;
+  animation-duration: 0.8s;
+}
+
+/* log in */
+.signInForm {
+  height: 29rem;
+}
+
+#formWrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+}
+
+#formWrap input {
+  padding-left: 10px;
+}
+
+#signupDiv form:invalid > .form-btn:hover {
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  -webkit-animation-play-state: running;
+  animation-play-state: running;
+  background: crimson;
+}
+#signupDiv form:valid > .form-btn {
+  -webkit-animation-play-state: paused;
+  animation-play-state: paused;
+}
+
+#signinDiv form:invalid > .form-btn:hover {
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  -webkit-animation-play-state: running;
+  animation-play-state: running;
+  background: crimson;
+}
+#signinDiv form:valid > .form-btn {
+  -webkit-animation-play-state: paused;
+  animation-play-state: paused;
+}
+
+/* animation */
+
+.active-dx {
+  -webkit-animation-name: foregrounding-dx;
+  animation-name: foregrounding-dx;
+  -webkit-animation-duration: 0.9s;
+  animation-duration: 0.9s;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+}
+
+.active-sx {
+  -webkit-animation-name: foregrounding-sx;
+  animation-name: foregrounding-sx;
+  -webkit-animation-duration: 0.9s;
+  animation-duration: 0.9s;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+}
+
+.inactive-dx {
+  -webkit-animation-name: overshadowing-dx;
+  animation-name: overshadowing-dx;
+  -webkit-animation-duration: 0.9s;
+  animation-duration: 0.9s;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+}
+
+.inactive-sx {
+  -webkit-animation-name: overshadowing-sx;
+  animation-name: overshadowing-sx;
+  -webkit-animation-duration: 0.9s;
+  animation-duration: 0.9s;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+}
+
+@-webkit-keyframes overshadowing-dx {
+  0% {
+    z-index: 2;
+    -webkit-transform: perspective(100px) translate3d(0px, 0px, 0px);
+    transform: perspective(100px) translate3d(0px, 0px, 0px);
+    opacity: 1;
+    -webkit-box-shadow: 0 10px 50px 0 rgba(0, 0, 0, 0.25);
+    box-shadow: 0 10px 50px 0 rgba(0, 0, 0, 0.25);
+  }
+  100% {
+    z-index: 1;
+    -webkit-transform: perspective(100px) translate3d(100px, 0px, -30px);
+    transform: perspective(100px) translate3d(100px, 0px, -30px);
+    opacity: 0;
+    -webkit-box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.25);
+    box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.25);
+  }
+}
+
+@keyframes overshadowing-dx {
+  0% {
+    z-index: 2;
+    -webkit-transform: perspective(100px) translate3d(0px, 0px, 0px);
+    transform: perspective(100px) translate3d(0px, 0px, 0px);
+    opacity: 1;
+    -webkit-box-shadow: 0 10px 50px 0 rgba(0, 0, 0, 0.25);
+    box-shadow: 0 10px 50px 0 rgba(0, 0, 0, 0.25);
+  }
+  100% {
+    z-index: 1;
+    -webkit-transform: perspective(100px) translate3d(100px, 0px, -30px);
+    transform: perspective(100px) translate3d(100px, 0px, -30px);
+    opacity: 0;
+    -webkit-box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.25);
+    box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.25);
+  }
+}
+
+@-webkit-keyframes overshadowing-sx {
+  0% {
+    z-index: 2;
+    -webkit-transform: perspective(100px) translate3d(0px, 0px, 0px);
+    transform: perspective(100px) translate3d(0px, 0px, 0px);
+    opacity: 1;
+    -webkit-box-shadow: 0 10px 50px 0 rgba(0, 0, 0, 0.25);
+    box-shadow: 0 10px 50px 0 rgba(0, 0, 0, 0.25);
+  }
+  100% {
+    z-index: 1;
+    -webkit-transform: perspective(100px) translate3d(-100px, 0px, -30px);
+    transform: perspective(100px) translate3d(-100px, 0px, -30px);
+    opacity: 0;
+    -webkit-box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.25);
+    box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.25);
+  }
+}
+
+@keyframes overshadowing-sx {
+  0% {
+    z-index: 2;
+    -webkit-transform: perspective(100px) translate3d(0px, 0px, 0px);
+    transform: perspective(100px) translate3d(0px, 0px, 0px);
+    opacity: 1;
+    -webkit-box-shadow: 0 10px 50px 0 rgba(0, 0, 0, 0.25);
+    box-shadow: 0 10px 50px 0 rgba(0, 0, 0, 0.25);
+  }
+  100% {
+    z-index: 1;
+    -webkit-transform: perspective(100px) translate3d(-100px, 0px, -30px);
+    transform: perspective(100px) translate3d(-100px, 0px, -30px);
+    opacity: 0;
+    -webkit-box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.25);
+    box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.25);
+  }
+}
+
+@-webkit-keyframes foregrounding-dx {
+  0% {
+    z-index: 1;
+    -webkit-transform: perspective(100px) translate3d(100px, 0px, -30px);
+    transform: perspective(100px) translate3d(100px, 0px, -30px);
+    opacity: 0;
+  }
+  50% {
+    z-index: 2;
+    -webkit-transform: perspective(100px) translate3d(400px, 0px, -30px);
+    transform: perspective(100px) translate3d(400px, 0px, -30px);
+  }
+  100% {
+    z-index: 2;
+    -webkit-transform: perspective(100px) translate3d(0px, 0px, 0px);
+    transform: perspective(100px) translate3d(0px, 0px, 0px);
+    opacity: 1;
+  }
+}
+
+@keyframes foregrounding-dx {
+  0% {
+    z-index: 1;
+    -webkit-transform: perspective(100px) translate3d(100px, 0px, -30px);
+    transform: perspective(100px) translate3d(100px, 0px, -30px);
+    opacity: 0;
+  }
+  50% {
+    z-index: 2;
+    -webkit-transform: perspective(100px) translate3d(400px, 0px, -30px);
+    transform: perspective(100px) translate3d(400px, 0px, -30px);
+  }
+  100% {
+    z-index: 2;
+    -webkit-transform: perspective(100px) translate3d(0px, 0px, 0px);
+    transform: perspective(100px) translate3d(0px, 0px, 0px);
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes foregrounding-sx {
+  0% {
+    z-index: 1;
+    -webkit-transform: perspective(100px) translate3d(-100px, 0px, -30px);
+    transform: perspective(100px) translate3d(-100px, 0px, -30px);
+    opacity: 0;
+  }
+  50% {
+    z-index: 2;
+    -webkit-transform: perspective(100px) translate3d(-400px, 0px, -30px);
+    transform: perspective(100px) translate3d(-400px, 0px, -30px);
+  }
+  100% {
+    z-index: 2;
+    -webkit-transform: perspective(100px) translate3d(0px, 0px, 0px);
+    transform: perspective(100px) translate3d(0px, 0px, 0px);
+    opacity: 1;
+  }
+}
+
+@keyframes foregrounding-sx {
+  0% {
+    z-index: 1;
+    -webkit-transform: perspective(100px) translate3d(-100px, 0px, -30px);
+    transform: perspective(100px) translate3d(-100px, 0px, -30px);
+    opacity: 0;
+  }
+  50% {
+    z-index: 2;
+    -webkit-transform: perspective(100px) translate3d(-400px, 0px, -30px);
+    transform: perspective(100px) translate3d(-400px, 0px, -30px);
+  }
+  100% {
+    z-index: 2;
+    -webkit-transform: perspective(100px) translate3d(0px, 0px, 0px);
+    transform: perspective(100px) translate3d(0px, 0px, 0px);
+    opacity: 1;
+  }
+}
+
+/* media queries */
+@media (min-width: 200px) and (max-width: 651px) {
+  .form-lr {
+    width: 90vw;
+  }
+  .form-lr h1 {
+    font-size: 3rem;
+  }
+  .form-lr input {
+    font-size: 1.2rem;
+  }
+  .form-lr h2 {
+    font-size: 1.1rem;
+  }
+
+  #formWrap{
+    /* margin-top: 4rem; */
+    overflow-x: hidden;
+  }
+
+}
+
+@media (max-height: 666px){
+  #formWrap{
+    margin-top: 7rem;
+  }
+  .loginPage{
+    height: 42rem;
+  }
+}
+
+@media (max-height: 590px){
+  #formWrap{
+    margin-top: 10rem;
+  }
+}
+
+@media (min-height: 667px) and (max-height: 734px){
+  #formWrap{
+    margin-top: 4rem;
+  }
+}
+@media (min-height: 735px) and (max-height: 800px){
+  #formWrap{
+    margin-top: 4rem;
+  }
+}
+@media (min-height: 801px) and (max-height: 900px){
+  #formWrap{
+    margin-top: 4rem;
+  }
+}
