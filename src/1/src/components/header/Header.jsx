@@ -4,6 +4,9 @@ import './header.scss';
 import logo from '../../../../assets/images/logo.png';
 import menu from '../../../../assets/images/menu.svg';
 
+const homeUrl = process.env.NODE_ENV !== 'development' ? process.env.PUBLIC_URL : '';
+
+
 export default class Header extends Component {
   constructor() {
     super();
@@ -21,37 +24,37 @@ export default class Header extends Component {
         <nav className="navigation">
           <ul className="routes">
             <li>
-              <Link to="/">HOME</Link>
+              <Link to={homeUrl + "/"}>HOME</Link>
             </li>
             <li>
-              <a href="/#getInTouch">CONTACT</a>
+              <a href={homeUrl + "/#getInTouch"}>CONTACT</a>
             </li>
             <li className="navigation-logo">
-              <Link to="/">
+              <Link to={homeUrl + "/"}>
                 <img src={logo} alt="" />
               </Link>
             </li>
             <li>
-              <Link to="/about">ABOUT</Link>
+              <Link to={homeUrl + "/about"}>ABOUT</Link>
             </li>
             <li id="about">
               <div >PRODUCTS</div>
               <ul className="dropdown" id="dropdown">
                 <li>
-                  <Link to="/forum">Forum</Link>
+                  <Link to={homeUrl + "/forum"}>Forum</Link>
                 </li>
                 <li>
-                  <Link to="/blog">Blog</Link>
+                  <Link to={homeUrl + "/blog"}>Blog</Link>
                 </li>
                 <li>
-                  <Link to="/courses">Courses</Link>
+                  <Link to={homeUrl + "/courses"}>Courses</Link>
                 </li>
               </ul>
             </li>
           </ul>
           <ul className="signIn">
             <li>
-              <Link to="/login">SIGN IN</Link>
+              <Link to={homeUrl + "/login"}>SIGN IN</Link>
             </li>
           </ul>
         </nav>
@@ -72,30 +75,30 @@ export default class Header extends Component {
             </div>
             <ul>
               <li>
-                <Link to="/">HOME</Link>
+                <Link to={homeUrl + "/"}>HOME</Link>
               </li>
               <li>
-                <a href="/#getInTouch">CONTACT</a>
+                <a href={homeUrl + "/#getInTouch"}>CONTACT</a>
               </li>
               <li>
-                <Link to="/about">ABOUT</Link>
+                <Link to={homeUrl + "/about"} > ABOUT</Link>
               </li>
               <li id="products">
                 PROUDCTS
               <ul id="dropdown2">
                   <li>
-                    <Link to="/forum">Forum</Link>
+                    <Link to={homeUrl + "/forum"} > Forum</Link>
                   </li>
                   <li>
-                    <Link to="/blog">Blog</Link>
+                    <Link to={homeUrl + "/blog"} > Blog</Link>
                   </li>
                   <li>
-                    <Link to="/courses">Courses</Link>
+                    <Link to={homeUrl + "/courses"} > Courses</Link>
                   </li>
                 </ul>
               </li>
               <li>
-                <Link to="/login">SIGN IN</Link>
+                <Link to={homeUrl + "/login"} > SIGN IN</Link>
               </li>
             </ul>
           </div>

@@ -14,6 +14,7 @@ import './product-details.scss';
 // state
 import { getData } from '../../redux/actions/index';
 import * as images from './../../../../assets/images';
+const homeUrl = process.env.NODE_ENV !== 'development' ? process.env.PUBLIC_URL : '';
 
 
 class ProductDetails extends React.Component {
@@ -34,7 +35,7 @@ class ProductDetails extends React.Component {
   }
 
   componentDidMount() {
-    this.props.getData().then((res)=>{
+    this.props.getData().then((res) => {
       console.log(res.value);
       this.setState({
         product: res.value.destination[this.props.match.params.courseId]
@@ -43,7 +44,7 @@ class ProductDetails extends React.Component {
     // https://github.com/ReactTraining/react-router/blob/master/packages/react-router-dom/docs/guides/scroll-restoration.md
     // fix with this
     window.scrollTo(0, 0);
-   }
+  }
 
   handleClick() {
     const { cartHasItems, shake } = this.state;
@@ -63,7 +64,7 @@ class ProductDetails extends React.Component {
     console.log(this.props.match.params.courseId);
     let product = get(this.props.data, 'product', {});
 
-    product = {...product, ...this.state.product }
+    product = { ...product, ...this.state.product }
 
     const backgroundPath = images[product.image];
     const playButtonPath = images.playicon;
@@ -119,7 +120,7 @@ class ProductDetails extends React.Component {
                 </div>
                 <div className="checkout price-content">
                   <p>Checkout</p>
-                  <Link to="/cart">
+                  <Link to={homeUrl + "/cart"}>
                     <div className="button-container">
                       <button
                         type="button"

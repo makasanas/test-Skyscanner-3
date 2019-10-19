@@ -2,6 +2,7 @@
   "name": "test2",
   "version": "0.1.0",
   "private": true,
+  "homepage": "test-Skyscanner-3",
   "dependencies": {
     "aos": "^3.0.0-beta.6",
     "clsx": "^1.0.4",

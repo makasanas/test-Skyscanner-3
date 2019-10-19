@@ -11,20 +11,21 @@ import Cart from './3/src/views/Cart/Cart';
 import Forum from './2/src/pages/Forum';
 import Blog from './2/src/pages/Blog';
 
+const homeUrl = process.env.NODE_ENV !== 'development' ? process.env.PUBLIC_URL : '';
 
 const App = () => (
   <Router>
     <div className="App">
       <Header />
       <Switch>
-        <Route exact path="/" component={Home} />
-        <Route exact path="/about" component={About} />
-        <Route exact path="/login" component={Login} />
-        <Route exact path="/courses" component={Products} />
-        <Route exact path="/courses/:courseId" component={ProductDetails} />
-        <Route exact path="/cart" component={Cart} />
-        <Route exact path="/forum" component={Forum} />
-        <Route exact path="/blog" component={Blog} />
+        <Route exact path={`${homeUrl}/`} component={Home} />
+        <Route exact path={`${homeUrl}/about`} component={About} />
+        <Route exact path={`${homeUrl}/login`} component={Login} />
+        <Route exact path={`${homeUrl}/courses`} component={Products} />
+        <Route exact path={`${homeUrl}/courses/:courseId`} component={ProductDetails} />
+        <Route exact path={`${homeUrl}/cart`} component={Cart} />
+        <Route exact path={`${homeUrl}/forum`} component={Forum} />
+        <Route exact path={`${homeUrl}/blog`} component={Blog} />
       </Switch>
       <Footer />
     </div>

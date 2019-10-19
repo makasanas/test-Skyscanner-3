@@ -20,6 +20,7 @@ import Categories from './../../../../assets/images/categoriesIcon.webp';
 import ProfileCard from '../../components/Cards/ProfileCard';
 import ReviewCard from '../../components/Cards/ReviewCard';
 import Dropdown from '../../components/DropDown';
+const homeUrl = process.env.NODE_ENV !== 'development' ? process.env.PUBLIC_URL : '';
 
 class Products extends React.Component {
   constructor(props) {
@@ -95,7 +96,7 @@ class Products extends React.Component {
                       </div>
                       <span className="search-counter">{`${searchedDestinations.length} results for your search "${searchText}"`}</span>
                       {searchedDestinations.map((item, i) => (i === 3 ? <div className="highlighted-search">This is for recommended area</div> : (
-                        <Link className="slide" to={'/courses/'+i} key={i}>
+                        <Link className="slide" to={homeUrl+'/courses/'+i} key={i}>
                           <SearchCard item={item} />
                         </Link>
                       )))}
@@ -151,7 +152,7 @@ class Products extends React.Component {
     return (
       <Slider>
         {destinations.map((item, i) => (
-          <Link to={"/courses/"+i} className="slide" key={i}>
+          <Link to={homeUrl+"/courses/"+i} className="slide" key={i}>
             <DestinationCard item={item} small />
           </Link>
         ))}
@@ -205,7 +206,7 @@ class Products extends React.Component {
               </div>
               <Slider category>
                 {categories.map((item, i) => (
-                  <Link to="/products/1" className="slide" key={i}>
+                  <Link to={homeUrl+"/courses/"+i} className="slide" key={i}>
                     <DestinationCard item={item} small />
                   </Link>
                 ))}

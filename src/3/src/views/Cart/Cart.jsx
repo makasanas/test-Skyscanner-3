@@ -10,6 +10,7 @@ import Input from '../../components/Input';
 import { getData } from '../../redux/actions/index';
 // style
 import './cart.scss';
+const homeUrl = process.env.NODE_ENV !== 'development' ? process.env.PUBLIC_URL : '';
 
 
 class Cart extends React.Component {
@@ -36,7 +37,7 @@ class Cart extends React.Component {
     return function () {
       const newProducts = filter(context.state.products, (item) => item.id !== id);
       if(newProducts.length === 0){
-        context.props.history.push('/courses')
+        context.props.history.push(homeUrl+'/courses')
       }
       
       context.setState({
@@ -80,7 +81,7 @@ class Cart extends React.Component {
           <div className="purchase-container">
             <div className="buttons-container">
               <div className="cancel-button">
-                <Link to="/courses">
+                <Link to={homeUrl + "/courses"}>
                   <button className="cart-button" type="button">
                     <span>Cancel</span>
                   </button>

@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+const homeUrl = process.env.NODE_ENV !== 'development' ? process.env.PUBLIC_URL : '';
+
 
 export default class Intro extends Component {
   render() {
@@ -68,7 +70,7 @@ export default class Intro extends Component {
               direction.
             </h1>
             <div className="action-button">
-              <Link to="/about">
+              <Link to={homeUrl + "/about"}>
                 <button>
                   <span>About us -></span>
                 </button>

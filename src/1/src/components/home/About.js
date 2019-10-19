@@ -3,6 +3,7 @@ import {Link} from "react-router-dom";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import "./about.scss";
+const homeUrl = process.env.NODE_ENV !== 'development' ? process.env.PUBLIC_URL : '';
 
 export default class About extends Component {
 
@@ -21,7 +22,7 @@ export default class About extends Component {
           <div className="right-half" data-aos="fade-left">
             <h1>About us</h1>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam numquam maxime repellendus quo temporibus, delectus unde animi quae a voluptates! Ipsum, labore odio! Dignissimos repellendus quaerat laborum voluptate aliquam quae!</p>
-            <Link to="/about"> <button className="read-moreBtn">Read more</button></Link>
+             <Link to={homeUrl + "/about"}><button className="read-moreBtn">Read more</button></Link>
           </div>
         </div>
       </div>
