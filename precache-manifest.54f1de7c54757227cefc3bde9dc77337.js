@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "6ee0e352e4291d164719a94b1404513a",
+    "revision": "3c0700123fad306a738e1c7dda80110b",
     "url": "/test-Skyscanner-3/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/test-Skyscanner-3/static/css/2.8072f8ee.chunk.css"
   },
   {
-    "revision": "5f4a167cff37048c270c",
+    "revision": "9fa14095624c1cc15961",
     "url": "/test-Skyscanner-3/static/css/main.6103f202.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/test-Skyscanner-3/static/js/2.33db81b9.chunk.js"
   },
   {
-    "revision": "5f4a167cff37048c270c",
-    "url": "/test-Skyscanner-3/static/js/main.959e7c6b.chunk.js"
+    "revision": "9fa14095624c1cc15961",
+    "url": "/test-Skyscanner-3/static/js/main.01c49967.chunk.js"
   },
   {
     "revision": "9edc8701dd7389799800",
