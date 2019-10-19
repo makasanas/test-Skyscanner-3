@@ -63,16 +63,16 @@ export default class GetinTouch extends Component {
 
           <div className="touch-div touch-lower" data-aos="fade-up">
             <div className="touch-component" >
-              <img src="./images/mobileHome.svg" alt="" />
+              <img src={mobileHome} alt="" />
               <h3>000</h3>
             </div>
             <div className="touch-component">
-              <img src="./images/emailHome.svg" alt="" />
+              <img src={emailHome} alt="" />
               <h3>SomeEmail@email.com</h3>
               <h3 className="get-detail">support@email.com</h3>
             </div>
             <div className="touch-component">
-              <img src="./images/locationHome.svg" alt="" />
+              <img src={locationHome} alt="" />
               <h3>Some address</h3>
               <h3 className="get-detail">3101 cape town USA</h3>
             </div>
