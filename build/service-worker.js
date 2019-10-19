@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/test-Skyscanner-3/precache-manifest.61a6e3475d8b20749cd3783f36f4249d.js"
+  "/test-Skyscanner-3/precache-manifest.d7b066c9497e28ae4c67c2c891e981e3.js"
 );
 
 self.addEventListener('message', (event) => {
